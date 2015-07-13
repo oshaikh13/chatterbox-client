@@ -11,15 +11,21 @@
   
   <!-- scripts -->
   <script src="env/config.js"></script>
+  <script src="scripts/helpers.js"></script>
   <script src="scripts/app.js"></script>
 </head>
 <body>
 
-<div id="main">
+<div id="main" class="main">
 
-  <h1>chatterbox</h1>
-  
-  <div id="chats"></div><!-- /chats -->
+  <h1 class="title">chatter<span>box</span></h1>
+
+  <select name="" id="">
+    <option value="">-- Check a room below --</option>
+    <option value="">Room 1</option>
+    <option value="">Room 2</option>
+    <option value="">Room 3</option>
+  </select>
 
   <div id="send">
     <form class="submit">
@@ -28,7 +34,16 @@
     </form>
   </div><!-- /send -->
 
+  <div id="chats"></div><!-- /chats -->
+
 </div><!-- /main -->
+
+<script>
+// Run the app
+$(document).ready(function() {
+  app.init();
+});
+</script>
 
 </body>
 </html>

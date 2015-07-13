@@ -1,77 +1,88 @@
+/* box sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+/* root */
+
 body {
-    background: #eee;
-    text-align: center;
-    padding: 0 25px;
-    font-family: arial, sans-serif;
+  padding: 0 24px;
+  color: #555;
+  background: #333;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
 }
 
-#main {
-    width: 500px;
-    margin: auto;
-    text-align: left;
-    background: white;
-    padding: 50px 60px;
-    border: solid #ddd;
-    border-width: 0 1px 1px 1px;
+/* main */
+
+.main {
+  width: 768px;
+  margin: 0 auto;
+  text-align: left;
+  background: white;
+  padding: 48px;
+  border: solid #ddd;
+  border-width: 0 1px 1px 1px;
 }
 
-#main h1 {
-    margin-top: 0;
-    font-size: 35px;
-    margin-bottom: 5px;
-    padding: 5px;
+/* title */
+
+.title {
+  margin-top: 0;
 }
 
-#main h1 span {
+.titlt span {
     font-style:italic;
 }
 
-#main ul {
-    padding-left: 20px;
+/* message handling */
+
+.log {
+
 }
 
-#main .error {
-    border: 1px solid red;
-    background: #FDEFF0;
-    padding: 20px;
+.log--error {
+  
 }
 
-#main .success {
-    margin-top: 25px;
+.log--success {
+  
 }
 
-#main .success code {
-    font-size: 12px;
-    color: green;
-    line-height: 13px;
-}
+/* form */
 
 form {
-    padding: 20px;
-    padding-left: 0;
-    margin-bottom: 20px;
+  
 }
 
-form input[type=text] {
-    margin-right: 10px;
-    width: 70%;
-    font-size: 12px;
-    padding: 5px;
-}
+/* chat */
 
 .chat {
-    padding: 5px;
-    margin-bottom: 5px;
-    background-color: #eee;
-}
-
-.chat .username {
-    font-weight: 800;
+  padding: 12px;
+  margin-bottom: 4px;
+  background-color: #eee;
 }
 
 .chat:hover {
-    background-color: #ddd;
+  background-color: #ddd;
 }
+
+.chat .username {
+  font-weight: 700;
+}
+
+.chat .message {
+  margin: 12px 0;
+}
+
+/* spinner */
 
 .spinner {
     float: right;
