@@ -1,4 +1,9 @@
-/* box sizing reset */
+/* -----------------------------------------------------------------------------
+
+  BOX SIZING RESET
+  
+----------------------------------------------------------------------------- */
+
 *,
 *::before,
 *::after {
@@ -9,40 +14,201 @@ html {
   box-sizing: border-box;
 }
 
-/* root */
+/* -----------------------------------------------------------------------------
+
+  ROOT
+  
+----------------------------------------------------------------------------- */
 
 body {
   padding: 0 24px;
   color: #555;
-  background: #333;
+  background: url('../images/bg.png') top left repeat;
+  background-color: #222;
   font-family: helvetica, arial, sans-serif;
   font-size: 14px;
   font-weight: 300;
+  line-height: 1.6;
 }
 
-/* main */
+/* -----------------------------------------------------------------------------
+
+  FORM ELEMENTS
+  
+----------------------------------------------------------------------------- */
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;;
+  font-size: inherit;
+  border: none;
+}
+
+input,
+textarea {
+  display: block;
+  margin: 0;
+  padding: 12px;
+  width: 100%;
+  color: inherit;
+  background-color: #fff;
+  border: none;
+}
+
+textarea {
+  margin: 0 0 4px 0;
+  max-width: 100%;
+  height: 120px;
+  resize: none;
+}
+
+input[type="submit"] {
+  color: #fff;
+  background: #222;
+  font-weight: 700;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+select {
+  display: block;
+  margin: 0 0 4px 0;
+  padding: 12px;
+  width: 100%;
+  color: #555;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.select {
+  position: relative;
+}
+
+.select::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 12px;
+  bottom: 0;
+  margin: auto;
+  width: 12px;
+  height: 6px;
+  border-top: solid 6px #222;
+  border-left: solid 6px transparent;
+  border-right: solid 6px transparent;
+  content: "";
+}
+
+/* -----------------------------------------------------------------------------
+
+  MAIN
+  
+----------------------------------------------------------------------------- */
 
 .main {
-  width: 768px;
   margin: 0 auto;
-  text-align: left;
-  background: white;
-  padding: 48px;
-  border: solid #ddd;
-  border-width: 0 1px 1px 1px;
+  max-width: 768px;
+  min-width: 320px;
 }
 
-/* title */
+/* -----------------------------------------------------------------------------
+
+  TITLE
+  
+----------------------------------------------------------------------------- */
 
 .title {
-  margin-top: 0;
+  margin: 24px 0;
+  color: #fff;
+  font-size: 48px;
+  text-align: center;
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
 }
 
-.titlt span {
-    font-style:italic;
+.title span {
+  font-weight: 300;
+  font-style: italic;
 }
 
-/* message handling */
+/* -----------------------------------------------------------------------------
+
+  SEND
+  
+----------------------------------------------------------------------------- */
+
+.send {
+  margin-bottom: 24px;
+}
+
+/* -----------------------------------------------------------------------------
+
+  CHAT
+  
+----------------------------------------------------------------------------- */
+
+.chat {
+  margin-bottom: 24px;
+  background-color: #222;
+}
+
+.chat .username {
+  padding: 4px;
+  color: #fff;
+  font-weight: 700;
+  background-color: rgb(255, 50, 100);
+}
+
+.chat .message {
+  margin: 0;
+  padding: 12px;
+  color: #ddd;
+  font-size: 16px;
+}
+
+.chat .meta {
+  padding: 12px;
+  border-top: solid 1px #333;
+}
+
+.chat .time,
+.chat .roomname {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.chat .time {
+  margin-right: 24px;
+}
+
+/* -----------------------------------------------------------------------------
+
+  SPINNER
+  
+----------------------------------------------------------------------------- */
+
+.spinner {
+    float: right;
+    height: 46px;
+    margin-bottom: 5px;
+}
+
+.spinner img {
+    padding: 10px;
+}
+
+/* -----------------------------------------------------------------------------
+
+  LOGS
+  
+----------------------------------------------------------------------------- */
 
 .log {
 
@@ -54,42 +220,4 @@ body {
 
 .log--success {
   
-}
-
-/* form */
-
-form {
-  
-}
-
-/* chat */
-
-.chat {
-  padding: 12px;
-  margin-bottom: 4px;
-  background-color: #eee;
-}
-
-.chat:hover {
-  background-color: #ddd;
-}
-
-.chat .username {
-  font-weight: 700;
-}
-
-.chat .message {
-  margin: 12px 0;
-}
-
-/* spinner */
-
-.spinner {
-    float: right;
-    height: 46px;
-    margin-bottom: 5px;
-}
-
-.spinner img {
-    padding: 10px;
 }
