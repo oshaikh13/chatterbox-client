@@ -5,11 +5,18 @@ var app = {
     this.fetch();
 
     // Listen for clicks on username
-    $('.username').on('click', function(e) {
+    var _this = this;
+    $('#chats').delegate('.username', 'click', function(e) {
       e.preventDefault();
+      
+      var clickedName = $(this).text();
+      
+      if (!_this.friends.hasOwnProperty(clickedName)) {
+        _this.friends[clickedName] = clickedName;
+      }
 
-      this.addFriend();
-    }.bind(this));
+      _this.addFriend(this);
+    });
 
     // Listen for form submissions
     $('#send .submit').on('submit', function(e) {
@@ -90,8 +97,10 @@ var app = {
   // Addes a message to the chat window
   addMessage: function(message) {
 
+    var nameClass = _.contains(this.friends, message.username) ? 'username username--friend' : 'username';
+
     var msg = '<div class="chat">'
-      + '<div class="username">' + escapeHtml(message.username) + '</div>'
+      + '<div class="' + nameClass + '">' + escapeHtml(message.username) + '</div>'
       + '<div class="message">' + escapeHtml(message.text) + '</div>'
       + '<div class="meta">'
         + '<span class="time">Posted on: ' + escapeHtml(message.createdAt) + '</span>'
@@ -113,8 +122,11 @@ var app = {
     return $('#room-select').val();
   },
 
+  friends: {},
+
   // Adds a friend
-  addFriend: function() {
+  addFriend: function(el) {
+    $(el).addClass('username--friend');
 
   },
 
